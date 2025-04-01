@@ -1,0 +1,14 @@
+fastapi==0.110.0
+uvicorn==0.27.1
+python-multipart==0.0.9
+pydantic==2.6.1
+pypdf2==3.0.1
+python-pptx==1.0.0
+python-dotenv==1.0.1
+httpx==0.27.0
+pdfminer.six==20231228
+aiofiles==23.2.1
+python-jose==3.3.0
+# Choose one or both for LLM integration
+openai==1.12.0
+anthropic==0.18.0
