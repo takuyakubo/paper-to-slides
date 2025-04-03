@@ -1,49 +1,57 @@
 # Paper to Slides
 
-A Python tool to automatically generate presentation slides from academic papers using LLMs (Large Language Models).
+LLM（大規模言語モデル）を使用して学術論文からプレゼンテーションスライドを自動生成するPythonツールです。
 
-## Features
+## 特徴
 
-- Upload academic papers in PDF format
-- Extract text and figures from papers
-- Generate summaries and key points using LLMs
-- Automatically create presentation slides
-- Customize slide templates and styles
+- 学術論文をPDF形式でアップロード
+- 論文からテキストと図表を抽出
+- LLMを使用して要約とキーポイントを生成
+- プレゼンテーションスライドを自動作成
+- スライドテンプレートとスタイルのカスタマイズ
 
-## Tech Stack
+## 技術スタック
 
-- FastAPI for the backend
-- PyPDF2/pdfminer.six for PDF processing
-- LLM integration (OpenAI API/Anthropic Claude)
-- python-pptx for PowerPoint generation
-- SQLite/PostgreSQL for data storage
+- バックエンド: FastAPI
+- PDF処理: PyPDF2/pdfminer.six
+- LLM統合: OpenAI API/Anthropic Claude
+- PowerPoint生成: python-pptx
+- データストレージ: SQLite/PostgreSQL
 
-## Getting Started
+## 始め方
 
-### Prerequisites
+### 前提条件
 
-- Python 3.9+
-- Poetry (optional, for dependency management)
+- Python 3.9以上
+- Poetry（オプション、依存関係管理用）
 
-### Installation
+### インストール
 
 ```bash
-# Clone the repository
+# リポジトリをクローン
 git clone https://github.com/takuyakubo/paper-to-slides.git
 cd paper-to-slides
 
-# Install dependencies
+# 依存関係をインストール
 pip install -r requirements.txt
 
-# Set up environment variables
+# 環境変数を設定
 cp .env.example .env
-# Edit .env with your API keys
+# .envファイルにAPIキーを入力
 ```
 
-### Running the application
+### アプリケーションの実行
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Visit `http://localhost:8000/docs` for the API documentation.
+APIドキュメントは `http://localhost:8000/docs` で確認できます。
+
+## 仕様書
+
+詳細な仕様書とドキュメントは `docs` ディレクトリにあります：
+
+- [技術仕様書](docs/技術仕様書.md) - システムアーキテクチャと技術詳細
+- [ユーザーガイド](docs/ユーザーガイド.md) - インストールと使用方法
+- [API仕様書](docs/API仕様書.md) - APIエンドポイントの詳細
