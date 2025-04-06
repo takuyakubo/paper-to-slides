@@ -1,8 +1,9 @@
 import os
-import pytest
 import tempfile
-from unittest.mock import patch, MagicMock
 from pathlib import Path
+from unittest.mock import MagicMock, patch
+
+import pytest
 
 from app.services import pdf_service
 

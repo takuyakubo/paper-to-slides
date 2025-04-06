@@ -1,8 +1,9 @@
 import os
-import fitz  # PyMuPDF
-from typing import List, Dict, Any, Optional, Tuple
-from pathlib import Path
 import re
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+import fitz  # PyMuPDF
 
 
 def extract_text_from_pdf(pdf_path: str) -> str:

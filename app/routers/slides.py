@@ -1,12 +1,13 @@
 import os
 import uuid
-from fastapi import APIRouter, HTTPException, BackgroundTasks, Body
-from fastapi.responses import FileResponse
-from typing import List, Optional, Dict, Any
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
-from app.models.slides import SlideRequest, SlideInfo, SlideTemplate
+from fastapi import APIRouter, BackgroundTasks, Body, HTTPException
+from fastapi.responses import FileResponse
+
+from app.models.slides import SlideInfo, SlideRequest, SlideTemplate
 from app.services.slides_service import generate_presentation
 
 router = APIRouter()

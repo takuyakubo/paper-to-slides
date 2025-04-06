@@ -1,16 +1,17 @@
 import os
-from fastapi import APIRouter, HTTPException, Body, Depends
-from typing import Dict, Any, List, Optional
+from typing import Any, Dict, List, Optional
+
+from fastapi import APIRouter, Body, Depends, HTTPException
 from pydantic import BaseModel
 
-from app.services.llm_service import analyze_paper, summarize_paper, extract_key_points
-from app.models.paper import PaperContent
 from app.models.llm import (
-    SummaryRequest,
-    SummaryResponse,
     KeyPointsRequest,
     KeyPointsResponse,
+    SummaryRequest,
+    SummaryResponse,
 )
+from app.models.paper import PaperContent
+from app.services.llm_service import analyze_paper, extract_key_points, summarize_paper
 
 router = APIRouter()
 

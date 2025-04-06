@@ -1,7 +1,8 @@
 import os
+
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -23,7 +24,7 @@ app.add_middleware(
 )
 
 # Import routers after app is initialized to avoid circular imports
-from app.routers import paper, slides, llm
+from app.routers import llm, paper, slides
 
 # Include routers
 app.include_router(paper.router, prefix="/api/papers", tags=["Papers"])

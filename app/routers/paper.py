@@ -1,14 +1,15 @@
 import os
 import uuid
-from fastapi import APIRouter, File, UploadFile, HTTPException, BackgroundTasks, Depends
-from fastapi.responses import JSONResponse
-from typing import List, Optional
-import aiofiles
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from typing import List, Optional
 
-from app.services.pdf_service import extract_text_from_pdf, extract_images_from_pdf
-from app.models.paper import PaperInfo, PaperMetadata, PaperContent
+import aiofiles
+from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, UploadFile
+from fastapi.responses import JSONResponse
+
+from app.models.paper import PaperContent, PaperInfo, PaperMetadata
+from app.services.pdf_service import extract_images_from_pdf, extract_text_from_pdf
 
 router = APIRouter()
 

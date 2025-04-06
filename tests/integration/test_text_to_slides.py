@@ -1,9 +1,10 @@
-import os
-import pytest
-from pathlib import Path
-import tempfile
-from unittest.mock import patch, MagicMock, AsyncMock
 import asyncio
+import os
+import tempfile
+from pathlib import Path
+from unittest.mock import AsyncMock, MagicMock, patch
+
+import pytest
 
 from app.services.llm_service import generate_slide_content
 from app.services.slides_service import generate_presentation

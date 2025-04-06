@@ -1,12 +1,13 @@
+import json
 import os
-from typing import Dict, Any, List, Optional, Union
-from pptx import Presentation
-from pptx.util import Inches, Pt
-from pptx.enum.text import PP_ALIGN
-from pptx.dml.color import RGBColor
 import re
 from pathlib import Path
-import json
+from typing import Any, Dict, List, Optional, Union
+
+from pptx import Presentation
+from pptx.dml.color import RGBColor
+from pptx.enum.text import PP_ALIGN
+from pptx.util import Inches, Pt
 
 from app.services.llm_service import generate_slide_content
 

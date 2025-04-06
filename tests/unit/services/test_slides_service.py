@@ -1,8 +1,9 @@
 import os
-import pytest
-from unittest.mock import patch, MagicMock, AsyncMock
 import tempfile
 from pathlib import Path
+from unittest.mock import AsyncMock, MagicMock, patch
+
+import pytest
 
 from app.services import slides_service
 

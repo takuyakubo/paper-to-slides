@@ -1,11 +1,12 @@
 import os
-import pytest
-from pathlib import Path
 import tempfile
-from unittest.mock import patch, MagicMock
+from pathlib import Path
+from unittest.mock import MagicMock, patch
 
-from app.services.pdf_service import extract_text_from_pdf
+import pytest
+
 from app.services.llm_service import summarize_paper
+from app.services.pdf_service import extract_text_from_pdf
 
 
 @pytest.fixture
