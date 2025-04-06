@@ -4,6 +4,7 @@ from typing import Dict, Any, List, Optional, Union
 from dotenv import load_dotenv
 import httpx
 import asyncio
+import re
 
 # Load environment variables
 load_dotenv()
