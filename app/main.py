@@ -1,7 +1,8 @@
 import os
+
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -10,7 +11,7 @@ load_dotenv()
 app = FastAPI(
     title="Paper to Slides API",
     description="API for converting academic papers to presentation slides",
-    version="0.1.0"
+    version="0.1.0",
 )
 
 # CORS middleware setup
@@ -23,12 +24,13 @@ app.add_middleware(
 )
 
 # Import routers after app is initialized to avoid circular imports
-from app.routers import paper, slides, llm
+from app.routers import llm, paper, slides
 
 # Include routers
 app.include_router(paper.router, prefix="/api/papers", tags=["Papers"])
 app.include_router(slides.router, prefix="/api/slides", tags=["Slides"])
 app.include_router(llm.router, prefix="/api/llm", tags=["LLM"])
+
 
 @app.get("/")
 async def root():
@@ -39,11 +41,14 @@ async def root():
         "docs_url": "/docs",
     }
 
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy"}
 
+
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
