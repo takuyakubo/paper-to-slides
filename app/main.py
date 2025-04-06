@@ -10,7 +10,7 @@ load_dotenv()
 app = FastAPI(
     title="Paper to Slides API",
     description="API for converting academic papers to presentation slides",
-    version="0.1.0"
+    version="0.1.0",
 )
 
 # CORS middleware setup
@@ -30,6 +30,7 @@ app.include_router(paper.router, prefix="/api/papers", tags=["Papers"])
 app.include_router(slides.router, prefix="/api/slides", tags=["Slides"])
 app.include_router(llm.router, prefix="/api/llm", tags=["LLM"])
 
+
 @app.get("/")
 async def root():
     """Root endpoint returns API information."""
@@ -39,11 +40,14 @@ async def root():
         "docs_url": "/docs",
     }
 
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy"}
 
+
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
